@@ -4,7 +4,7 @@ framework: mocha
 preRun:
      command:
         - yarn
-        - brew install rustup-init
+        - npx rust-app rustup-init
         - source $HOME/.cargo/env
         - yarn build-native
 
