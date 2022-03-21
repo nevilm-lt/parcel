@@ -1,5 +1,5 @@
 ---
-framework: jest
+framework: mocha
 preRun:
   command:
     - yarn
@@ -10,12 +10,12 @@ preMerge:
   env:
     NODE_ENV=test
   pattern:
-    - "./packages/**/test/*.test.js"
+    - "./packages/core/core/test/*.js"
 postMerge:
   env:
     NODE_ENV=test
   pattern:
-    - "./packages/**/test/*.test.js"
+    - "./packages/core/core/test/*.js"
 postRun:
   command:
     - yarn --version
