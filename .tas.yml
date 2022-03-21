@@ -1,0 +1,22 @@
+---
+framework: jest
+preRun:
+  command:
+    - yarn
+    - brew install rustup-init
+    - source $HOME/.cargo/env
+    - yarn build-native
+preMerge:
+  env:
+    NODE_ENV=test
+  pattern:
+    - "./packages/**/test/*.test.js"
+postMerge:
+  env:
+    NODE_ENV=test
+  pattern:
+    - "./packages/**/test/*.test.js"
+postRun:
+  command:
+    - yarn --version
+version: 1.0
