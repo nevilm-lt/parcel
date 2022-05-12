@@ -1,22 +1,19 @@
-
 ---
 framework: mocha
-
 preRun:
      command:
         - yarn
         - npx rust-app rustup-init
         - source $HOME/.cargo/env
         - yarn build-native
-
 preMerge:
   pattern:
     - "packages/*/!(integration-tests|fs-write-stream-atomic)/test/*.js"
-
 postMerge:
   pattern: 
     - "packages/*/!(integration-tests|fs-write-stream-atomic)/test/*.js"
-
+postRun:
+     command:
+        - echo "hello"
 configFile: ".mocharc.json"
-
 version: 1.0
