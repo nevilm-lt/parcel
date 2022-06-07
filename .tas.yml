@@ -17,3 +17,4 @@ postRun:
         - echo "hello"
 configFile: ".mocharc.json"
 version: 1.0
+
